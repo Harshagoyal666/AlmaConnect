@@ -1,0 +1,29 @@
+<%- include ("../partials/header") %>
+<div class="container">
+    <div class="row">
+<h1 style="text-align: center;">Create a New Report</h1>
+<div style="width: 30%; margin: 25px auto;">
+<form action="/Reports" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+<input class="form-control" type="text" name=Report[heading] placeholder="Heading">
+</div>
+<div class="form-group">
+    <label for="image">Image</label>
+    <input type="file" id="image" name="image" accept="image/*" required>
+</div>
+<div class="form-group">
+    <input class="form-control" type="text" name="Report[college]" placeholder="college name">
+  </div>
+<div class="form-group">
+    <textarea class="form-control" rows="3" input class="scrollabletextbox" type="text" name=Report[experience] placeholder="experience"></textarea>
+    </div>
+<div class="form-group">
+<button class="btn btn-lg btn-primary btn-block" style="background-color:rgb(197, 114, 114)">Submit!</button>
+</div>
+</form>
+<a href="/Reports" style="color:rgb(197, 114, 114)">Go Back</a>
+</div>
+
+</div>
+</div>
+<%- include ("../partials/footer") %>
