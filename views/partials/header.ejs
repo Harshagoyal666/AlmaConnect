@@ -2,17 +2,26 @@
 <html>
     <head>
         <!-- Make site responsive on mobile/tablet -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>AlmaConnect</title> 
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href="stylesheet" href="/stylesheets/main.css">
       <link href="stylesheet" href="/stylesheets/show.css">
     </head>
     <body>
-        <nav class="navbar navbar-default" style="background-color:rgb(66, 43, 43)">
+        <nav class="navbar navbar-default"  style="background-color:rgb(66, 43, 43)">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -24,14 +33,14 @@
         
                     <a class="navbar-brand" href="/" style="font-weight: bold;color:antiquewhite;font-family:Apple Chancery, cursive;font-size: 30px;">AlmaConnect</a>
                 </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="<%= typeof page !== 'undefined' && page === 'Reports' ? 'active' : '' %>"><a href="/Reports" style="font-weight: bold;color:antiquewhite">Home</a></li>
+                <div id="navbar" class="collapse navbar-collapse" style="background-color:rgb(66, 43, 43)" >
+                  <ul class="nav navbar-nav" >
+                    <li class="<%= typeof page !== 'undefined' && page === 'Reports' ? '' : '' %>"><a href="/Reports" style="font-weight: bold;color:antiquewhite;">Home</a></li>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right">
+                  <ul class="nav navbar-nav navbar-right" >
                       <% if(!currentUser){ %>
-                          <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login"style="font-weight: bold;color:antiquewhite">Login</a></li>
-                          <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register"style="font-weight: bold;color:antiquewhite">Sign Up</a></li>
+                          <li class="<%= typeof page !== 'undefined' && page === 'login' ? '' : '' %>"><a href="/login"style="font-weight: bold;color:antiquewhite" style="background-color:rgb(66, 43, 43)">Login</a></li>
+                          <li class="<%= typeof page !== 'undefined' && page === 'register' ? '' : '' %>"><a href="/register"style="font-weight: bold;color:antiquewhite">Sign Up</a></li>
                       <% } else { %>
                           <li><a href="#"style="font-weight: bold;color:antiquewhite">Signed In As <%= currentUser.username %></a></li>
                           <li><a href="/logout"style="font-weight: bold;color:antiquewhite">Logout</a></li>
